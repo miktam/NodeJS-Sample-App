@@ -60,6 +60,21 @@ app.post('/employee/new', function(req, res){
     });
 });
 
+//save new employee - rest approach
+app.get('/user/create/:title/:name', function(req, res) {
+
+  if (!req.params.title || !req.params.name) {
+    res.send("url: /user/create/TITLE/NAME\n For example: /user/create/Mr/Trotsky")
+  }
+
+  employeeProvider.save({
+    title: req.params.title,
+    name: req.params.name
+  }, function( error, docs) {
+    res.redirect('/')
+  });
+});
+
 //update an employee
 app.get('/employee/:id/edit', function(req, res) {
 	employeeProvider.findById(req.param('_id'), function(error, employee) {

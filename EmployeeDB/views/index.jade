@@ -14,4 +14,11 @@ block content
                 form( method="get", action="/employee/:id/edit") 
                     input(name="_id", type="hidden", value=employee._id.toHexString()) 
                     input(id="edit", value="Edit", type="submit")
-        a(href="/employee/new")!= "Add New User"
+
+
+    h2 Adding users
+
+    h4 Add user through REST API
+
+    h4 Example
+        | /user/create/Mr/Trotsky
