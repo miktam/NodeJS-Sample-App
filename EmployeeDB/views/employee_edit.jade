@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h1= "Edit Employee"
+    h1= "Edit User"
     div.newemployee
         form( method="post")
             input(name="_id", type="hidden", value=employee._id.toHexString()) 
@@ -14,4 +14,4 @@ block content
                     input(type="text", name="name", id="editEmployeeName", value=employee.name)
                 div#editEmployeeSubmit
                     input(type="submit", value="Update")
-        a(href="/")!= "Back to Employee List"
+        a(href="/")!= "Back to User List"
