@@ -22,7 +22,6 @@ EmployeeProvider.prototype.findAll = function(callback) {
     this.getCollection(function(error, employee_collection) {
       if( error ) callback(error)
       else {
-        console.log("got employees: " + employee_collection.length);
         employee_collection.find().toArray(function(error, results) {
           if( error ) callback(error)
           else callback(null, results)
